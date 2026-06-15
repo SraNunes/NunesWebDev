@@ -1,0 +1,238 @@
+<style>
+:root{
+  --bg:#0b0b0d;
+  --bg-soft:#141418;
+  --card:#17171c;
+  --card-2:#1d1d24;
+  --text:#f5f5f7;
+  --muted:#c4c4cc;
+  --line:rgba(255,255,255,.08);
+  --orange:#ff6a00;
+  --orange-2:#ff8a1d;
+  --red:#e53935;
+  --white:#ffffff;
+  --shadow:0 18px 45px rgba(0,0,0,.35);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.nw-wrapper{background:
+ radial-gradient(circle at 10% 10%, rgba(229,57,53,.18), transparent 28%),
+ radial-gradient(circle at 90% 0%, rgba(255,106,0,.18), transparent 30%),
+ linear-gradient(180deg,#0b0b0d 0%, #101014 100%);
+ color:var(--text)}
+.nw-container{width:min(1180px,92vw);margin:0 auto}
+.nw-topbar{position:sticky;top:0;z-index:20;background:rgba(11,11,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nw-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
+.nw-brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.nw-brand-mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--red));display:grid;place-items:center;box-shadow:var(--shadow);font-size:20px}
+.nw-brand small{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.18em}
+.nw-nav-links{display:flex;flex-wrap:wrap;gap:12px}
+.nw-nav-links a{color:var(--text);text-decoration:none;padding:10px 14px;border-radius:999px;border:1px solid transparent;font-size:14px}
+.nw-nav-links a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+.nw-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;transition:.25s ease;cursor:pointer;border:none}
+.nw-btn-primary{background:linear-gradient(135deg,var(--orange),var(--red));color:var(--white);box-shadow:0 12px 28px rgba(229,57,53,.28)}
+.nw-btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.nw-btn-secondary{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--line)}
+.nw-btn-secondary:hover{background:rgba(255,255,255,.09)}
+.nw-hero{padding:72px 0 42px}
+.nw-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}
+.nw-panel{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.nw-hero-main{padding:34px}
+.nw-kicker{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(255,106,0,.12);border:1px solid rgba(255,106,0,.22);color:#ffb57c;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.nw-hero h1{font-size:clamp(2.3rem,5vw,4.8rem);line-height:1.02;margin:18px 0 18px;max-width:10ch}
+.nw-hero p{font-size:1.07rem;line-height:1.75;color:var(--muted);max-width:62ch}
+.nw-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.nw-highlight-grid{display:grid;gap:16px;padding:24px}
+.nw-mini-card{padding:18px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line)}
+.nw-mini-card strong{display:block;font-size:1rem;margin-bottom:7px}
+.nw-mini-card span{color:var(--muted);font-size:.95rem;line-height:1.6}
+.nw-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.nw-stat{padding:18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);text-align:center}
+.nw-stat b{display:block;font-size:1.55rem;color:#ffb57c}
+.nw-stat span{font-size:.9rem;color:var(--muted)}
+.nw-section{padding:34px 0}
+.nw-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+.nw-head h2{font-size:clamp(1.5rem,3vw,2.4rem);margin:0}
+.nw-head p{margin:0;color:var(--muted);max-width:58ch;line-height:1.7}
+.nw-services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.nw-card{padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+.nw-icon{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,rgba(255,106,0,.18),rgba(229,57,53,.16));border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;font-size:24px}
+.nw-card h3{margin:0;font-size:1.15rem}
+.nw-card p{margin:0;color:var(--muted);line-height:1.72;font-size:.98rem}
+.nw-card .nw-btn{margin-top:auto;width:100%}
+.nw-two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.nw-list{display:grid;gap:12px;margin-top:16px}
+.nw-list div{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted)}
+.nw-accent{color:#ffb57c}
+.nw-cta{padding:30px;border-radius:26px;background:linear-gradient(135deg,rgba(255,106,0,.16),rgba(229,57,53,.16));border:1px solid rgba(255,255,255,.08)}
+.nw-cta h3{font-size:clamp(1.6rem,3vw,2.4rem);margin:0 0 12px}
+.nw-cta p{margin:0 0 22px;color:#ffe9dd;line-height:1.75;max-width:58ch}
+.nw-footer{padding:26px 0 40px;color:var(--muted);font-size:.95rem}
+.nw-badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.nw-badge{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.88rem;color:#ffd3bf}
+@media (max-width:980px){
+  .nw-hero-grid,.nw-services,.nw-two-col{grid-template-columns:1fr}
+  .nw-stats{grid-template-columns:1fr}
+  .nw-nav{align-items:flex-start;flex-direction:column}
+}
+</style>
+
+<div class="nw-wrapper">
+  <div class="nw-topbar">
+    <div class="nw-container nw-nav">
+      <div class="nw-brand">
+        <div class="nw-brand-mark">N</div>
+        <div>
+          NunesWebDev
+          <small>tecnologia • design • suporte</small>
+        </div>
+      </div>
+      <div class="nw-nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="nw-hero">
+    <div class="nw-container nw-hero-grid">
+      <div class="nw-panel nw-hero-main">
+        <span class="nw-kicker">soluções digitais com presença</span>
+        <h1>Seu negócio com visual forte, estrutura profissional e atendimento direto.</h1>
+        <p>
+          Criação de sites, tratamento e criação de imagem, identidade visual, manutenção digital, suporte técnico e montagem de PC. Tudo com uma identidade marcante, moderna e pensada para passar confiança desde o primeiro clique.
+        </p>
+        <div class="nw-badge-row">
+          <span class="nw-badge">Sites profissionais</span>
+          <span class="nw-badge">Design visual</span>
+          <span class="nw-badge">Suporte técnico</span>
+          <span class="nw-badge">Atendimento por WhatsApp</span>
+        </div>
+        <div class="nw-hero-actions">
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20vim%20pelo%20site%20da%20NunesWebDev%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer">Pedir orçamento</a>
+          <a class="nw-btn nw-btn-secondary" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="nw-stats">
+          <div class="nw-stat"><b>100%</b><span>atendimento humanizado</span></div>
+          <div class="nw-stat"><b>Visual</b><span>forte, limpo e profissional</span></div>
+          <div class="nw-stat"><b>Direto</b><span>contato rápido pelo WhatsApp</span></div>
+        </div>
+      </div>
+
+      <div class="nw-panel nw-highlight-grid">
+        <div class="nw-mini-card">
+          <strong>Sites que convertem melhor</strong>
+          <span>Estrutura clara, identidade forte e botões estratégicos para transformar visita em conversa e conversa em pedido.</span>
+        </div>
+        <div class="nw-mini-card">
+          <strong>Imagem profissional</strong>
+          <span>Tratamento visual, criação de peças e posicionamento de marca para deixar seu negócio mais memorável.</span>
+        </div>
+        <div class="nw-mini-card">
+          <strong>Suporte de verdade</strong>
+          <span>Além do visual, você também conta com manutenção, suporte técnico e montagem de PC quando precisar.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nw-section" id="servicos">
+    <div class="nw-container">
+      <div class="nw-head">
+        <div>
+          <h2>Serviços</h2>
+        </div>
+        <p>Cada botão abaixo já leva a pessoa para o seu WhatsApp com uma mensagem automática diferente, deixando o atendimento mais rápido e mais organizado.</p>
+      </div>
+
+      <div class="nw-services">
+        <article class="nw-card">
+          <div class="nw-icon">🌐</div>
+          <h3>Criação de site</h3>
+          <p>Sites com presença profissional, visual forte, estrutura clara e foco em transmitir confiança para o cliente desde a primeira visita.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20criação%20de%20site." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">🎨</div>
+          <h3>Tratamento e criação de imagem</h3>
+          <p>Peças visuais mais bonitas, profissionais e alinhadas com a proposta do seu negócio, para postar, divulgar e fortalecer sua presença.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20tratamento%20e%20criação%20de%20imagem." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">🪪</div>
+          <h3>Criação de identidade visual</h3>
+          <p>Logo, direção visual e elementos de marca para o negócio ficar mais reconhecível, mais profissional e com personalidade própria.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20criação%20de%20identidade%20visual." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">🛠️</div>
+          <h3>Manutenção de sites</h3>
+          <p>Correções, atualizações, ajustes de conteúdo, organização e melhorias para o site continuar bonito, funcional e confiável.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20manutenção%20de%20site." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">📱</div>
+          <h3>Manutenção de redes sociais</h3>
+          <p>Organização visual e ajustes de presença digital para sua marca não parecer largada e manter uma comunicação mais profissional.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20manutenção%20de%20redes%20sociais." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">💻</div>
+          <h3>Suporte técnico</h3>
+          <p>Ajuda técnica para resolver problemas, orientar decisões e deixar seus equipamentos e sua rotina digital funcionando melhor.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20suporte%20técnico." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+
+        <article class="nw-card">
+          <div class="nw-icon">🖥️</div>
+          <h3>Montagem de PC</h3>
+          <p>Montagem com foco em desempenho, custo-benefício e necessidade real, para você ter uma máquina pronta para trabalho ou uso pessoal.</p>
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20eu%20quero%20solicitar%20um%20serviço%20de%20montagem%20de%20PC." target="_blank" rel="noopener noreferrer">Quero este serviço</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nw-section" id="sobre">
+    <div class="nw-container nw-two-col">
+      <div class="nw-card">
+        <h2>Sobre a NunesWebDev</h2>
+        <p>A NunesWebDev nasceu com uma proposta direta: unir visual forte, praticidade, tecnologia e atendimento acessível em um só lugar. A ideia é entregar soluções que ajudam pessoas e negócios a terem presença mais profissional, organizada e confiável no digital e também no suporte técnico.</p>
+        <div class="nw-list">
+          <div><span class="nw-accent">Atendimento direto:</span> contato rápido e objetivo, sem enrolação.</div>
+          <div><span class="nw-accent">Soluções completas:</span> site, imagem, marca, manutenção e suporte.</div>
+        </div>
+      </div>
+      <div class="nw-card">
+        <h2>Segurança e privacidade</h2>
+        <p>Este site foi pensado para trabalhar com o mínimo de coleta de dados possível. O principal contato é feito por links diretos para o WhatsApp, o que simplifica o atendimento inicial e diminuí a exposição de informações sigilosas armazenadas.</p>
+        
+  </div></div></section>
+
+  <section class="nw-section" id="contato">
+    <div class="nw-container">
+      <div class="nw-cta">
+        <h3>Vamos tirar sua ideia do papel?</h3>
+        <p>Se você precisa de um site, uma identidade visual mais forte, imagens melhores, manutenção digital, suporte técnico ou montagem de PC, o próximo passo é simples: me chama no WhatsApp e me conta o que você precisa.</p>
+        <div class="nw-hero-actions">
+          <a class="nw-btn nw-btn-primary" href="https://wa.me/5511963388512?text=Olá%2C%20vim%20pelo%20site%20da%20NunesWebDev%20e%20quero%20falar%20sobre%20um%20serviço." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+          <a class="nw-btn nw-btn-secondary" href="#servicos">Escolher serviço</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nw-footer">
+    <div class="nw-container">
+      NunesWebDev • Soluções tecnológicas com identidade profissional.
+    </div>
+  </footer>
+    </div>
